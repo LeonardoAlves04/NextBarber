@@ -39,7 +39,7 @@ export default async function Home() {
           Recomendações
         </h2>
 
-        <div className=" flex gap-4 px-5  overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 px-5  overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
