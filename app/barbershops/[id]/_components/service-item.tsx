@@ -24,6 +24,16 @@ interface ServiceItemProps {
 
 const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
   const [date, setDate] = useState<Date | undefined>(new Date());
+  const [hour, setHour] = useState<string | undefined>();
+
+  const handleDateClick = (date: Date | undefined) => {
+    setDate(date);
+    setHour(undefined);
+  };
+
+  const handleHourCLick = (time: string) => {
+    setHour(time);
+  };
 
   const handleBookingClick = () => {
     if (!isAuthenticated) {
@@ -74,7 +84,7 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
                   <Calendar
                     mode="single"
                     selected={date}
-                    onSelect={setDate}
+                    onSelect={handleDateClick}
                     className="capitalize mt-6"
                     locale={ptBR}
                     fromDate={new Date()}
@@ -102,7 +112,14 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
                   {date && (
                     <div className="flex gap-3 overflow-auto py-6 px-5 border-y border-solid border-secondary [&::-webkit-scrollbar]:hidden">
                       {timeList.map((time) => (
-                        <Button key={time}>{time}</Button>
+                        <Button
+                          key={time}
+                          variant={hour === time ? "default" : "outline"}
+                          className="rounded-full"
+                          onClick={() => handleHourCLick(time)}
+                        >
+                          {time}
+                        </Button>
                       ))}
                     </div>
                   )}
