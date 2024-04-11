@@ -81,33 +81,35 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
                     <SheetTitle>Fazer reserva</SheetTitle>
                   </SheetHeader>
 
-                  <Calendar
-                    mode="single"
-                    selected={date}
-                    onSelect={handleDateClick}
-                    className="capitalize mt-6"
-                    locale={ptBR}
-                    fromDate={new Date()}
-                    styles={{
-                      head_cell: {
-                        width: "100%",
-                      },
-                      cell: {
-                        width: "100%",
-                      },
-                      button: {
-                        width: "100%",
-                      },
-                      nav_button_previous: {
-                        width: "32px",
-                        height: "32 px",
-                      },
-                      nav_button_next: {
-                        width: "32px",
-                        height: "32px",
-                      },
-                    }}
-                  />
+                  <div className="py-6">
+                    <Calendar
+                      mode="single"
+                      selected={date}
+                      onSelect={handleDateClick}
+                      className="capitalize"
+                      locale={ptBR}
+                      fromDate={new Date()}
+                      styles={{
+                        head_cell: {
+                          width: "100%",
+                        },
+                        cell: {
+                          width: "100%",
+                        },
+                        button: {
+                          width: "100%",
+                        },
+                        nav_button_previous: {
+                          width: "32px",
+                          height: "32 px",
+                        },
+                        nav_button_next: {
+                          width: "32px",
+                          height: "32px",
+                        },
+                      }}
+                    />
+                  </div>
 
                   {date && (
                     <div className="flex gap-3 overflow-auto py-6 px-5 border-y border-solid border-secondary [&::-webkit-scrollbar]:hidden">
@@ -123,6 +125,16 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
                       ))}
                     </div>
                   )}
+
+                  <div className="py-6 px-5 border-t border-solid border-secondary">
+                    <Card>
+                      <CardContent className="p-3">
+                        <div className="flex justify-between">
+                          <h2 className="font-bold"> {service.name}</h2>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
                 </SheetContent>
               </Sheet>
             </div>
