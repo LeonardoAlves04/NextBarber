@@ -6,23 +6,30 @@ import { Card, CardContent } from "@/app/_components/ui/card";
 import {
   Sheet,
   SheetContent,
+  SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
-import { Service } from "@prisma/client";
+import { Barbershop, Service } from "@prisma/client";
 import { ptBR } from "date-fns/locale";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { generateDayTimeList } from "./_helpers/hours";
+import { format } from "date-fns";
 
 interface ServiceItemProps {
   service: Service;
   isAuthenticated?: boolean;
+  barbershop: Barbershop;
 }
 
-const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
+const ServiceItem = ({
+  service,
+  isAuthenticated,
+  barbershop,
+}: ServiceItemProps) => {
   const [date, setDate] = useState<Date | undefined>(new Date());
   const [hour, setHour] = useState<string | undefined>();
 
@@ -112,7 +119,7 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
                   </div>
 
                   {date && (
-                    <div className="flex gap-3 overflow-auto py-6 px-5 border-y border-solid border-secondary [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 overflow-auto py-6 px-5 border-t border-solid border-secondary [&::-webkit-scrollbar]:hidden">
                       {timeList.map((time) => (
                         <Button
                           key={time}
@@ -128,12 +135,42 @@ const ServiceItem = ({ service, isAuthenticated }: ServiceItemProps) => {
 
                   <div className="py-6 px-5 border-t border-solid border-secondary">
                     <Card>
-                      <CardContent className="p-3">
+                      <CardContent className="p-3 gap-3 flex flex-col">
                         <div className="flex justify-between">
                           <h2 className="font-bold"> {service.name}</h2>
+                          <h3 className="font-bold text-sm">
+                            {" "}
+                            {Intl.NumberFormat("pt-BR", {
+                              style: "currency",
+                              currency: "BRL",
+                            }).format(Number(service.price))}
+                          </h3>
+                        </div>
+
+                        {date && (
+                          <div className="flex justify-between">
+                            <h3 className="text-gray-400 text-sm">Data</h3>
+                            <h4 className="text-sm">
+                              {format(date, "dd 'de' MMMM", { locale: ptBR })}
+                            </h4>
+                          </div>
+                        )}
+
+                        {hour && (
+                          <div className="flex justify-between">
+                            <h3 className="text-gray-400 text-sm">Horário</h3>
+                            <h4 className="text-sm">{hour}</h4>
+                          </div>
+                        )}
+
+                        <div className="flex justify-between">
+                          <h3 className="text-gray-400 text-sm">Barbearia</h3>
+                          <h4 className="text-sm">{barbershop.name}</h4>
                         </div>
                       </CardContent>
                     </Card>
+
+                    <SheetFooter></SheetFooter>
                   </div>
                 </SheetContent>
               </Sheet>
