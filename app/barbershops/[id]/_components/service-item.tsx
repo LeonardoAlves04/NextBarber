@@ -30,7 +30,7 @@ const ServiceItem = ({
   isAuthenticated,
   barbershop,
 }: ServiceItemProps) => {
-  const [date, setDate] = useState<Date | undefined>(new Date());
+  const [date, setDate] = useState<Date | undefined>(undefined);
   const [hour, setHour] = useState<string | undefined>();
 
   const handleDateClick = (date: Date | undefined) => {
@@ -169,9 +169,11 @@ const ServiceItem = ({
                         </div>
                       </CardContent>
                     </Card>
-
-                    <SheetFooter></SheetFooter>
                   </div>
+
+                  <SheetFooter className="px-5">
+                    <Button disabled={!hour || !date}>Confirmar reserva</Button>
+                  </SheetFooter>
                 </SheetContent>
               </Sheet>
             </div>
