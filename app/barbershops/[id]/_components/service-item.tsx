@@ -11,17 +11,18 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/app/_components/ui/sheet";
-import { Barbershop, Service } from "@prisma/client";
+import { Barbershop, Booking, Service } from "@prisma/client";
 import { ptBR } from "date-fns/locale";
 import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { generateDayTimeList } from "./_helpers/hours";
 import { format, setHours, setMinutes } from "date-fns";
 import { saveBooking } from "../_actions/save-booking";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import { getDayBookings } from "../_actions/get-day-bookings";
 
 interface ServiceItemProps {
   service: Service;
@@ -40,6 +41,21 @@ const ServiceItem = ({
   const [hour, setHour] = useState<string | undefined>();
   const [submitIsLoading, setSubmitIsLoading] = useState(false);
   const [sheetIsOpen, setSheetIsOpen] = useState(false);
+  const [dayBookings, setDayBookings] = useState<Booking[]>([]);
+
+  useEffect(() => {
+    if (!date) {
+      return;
+    }
+
+    const refreshAvailableHours = async () => {
+      const _dayBookings = await getDayBookings(date);
+
+      setDayBookings(_dayBookings);
+    };
+
+    refreshAvailableHours();
+  }, [date]);
 
   const handleDateClick = (date: Date | undefined) => {
     setDate(date);
