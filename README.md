@@ -1,5 +1,4 @@
-## Ecommerce de periféricos e produtos para computadores
-
+## Site de reserva de serviços de uma barbearia.
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=next&message=framework&color=blue&style=for-the-badge&logo=Next"/>
   <img src="https://img.shields.io/static/v1?label=vercel&message=deploy&color=blue&style=for-the-badge&logo=vercel"/>
@@ -23,7 +22,7 @@
 ## Descrição do projeto 📝
 
 <p align="justify">
-Um Ecommerce que vende mouses, teclados, monitores e coisas relacionadas a computadores. Você pode pesquisar por seção que vc deseja e selecionar a quantidade de produtos e adicioná-los ao carrinhom, contéendo um sistema de pagamento real com a integração do stripe (uma API de pagamento), e para testar você pode usar o cartão de teste, basta apenas preencher com: 4242 4242 4242 4242).
+Uma plataforma de agendamento de serviços de uma barbearia, você pode procurar entre várias barbearias na sua proximidade e escolher/reservar um serviço dentre vários. Depois de reservar você pode conferir sua reserva e se necessario, cancelá-la!
 
 </p>
 
@@ -31,11 +30,9 @@ Um Ecommerce que vende mouses, teclados, monitores e coisas relacionadas a compu
 
 :heavy_check_mark: Login com o Google: Permitimos que os usuários façam login usando suas contas do Google para uma experiência de autenticação simplificada.
 
-:heavy_check_mark: Navegação por Categorias: Os usuários podem explorar produtos por categorias, facilitando a busca e a compra.
+:heavy_check_mark: Navegação pelos serviços: Os usuários podem facilmente explorar diversos serviços e por sua vez escolher reserválos com apenas alguns cliques.
 
-:heavy_check_mark: Descontos em Produtos: Alguns produtos podem ter descontos especiais, permitindo aos usuários economizar em suas compras.
-
-:heavy_check_mark: Gerenciamento do Carrinho de Compras: Os usuários podem adicionar produtos ao seu carrinho de compras, remover produtos e também modificar a quantidade de um produto no carrinho de compras conforme necessário.
+:heavy_check_mark: Gerenciamento das reservas: Os usuários podem verificar suas reservas e serviços escolhidos e se necessário cancelá-las com apenas um clique.
 
 :heavy_check_mark: Pagamento do Pedido com a API do Stripe: Oferecemos uma experiência segura de pagamento online com a integração da API do Stripe, incluindo o uso de webhooks para processar eventos relacionados ao pagamento. Os usuários podem concluir seus pedidos com facilidade e segurança.
 
