@@ -195,7 +195,6 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                   disabled={!isBookingConfirmed || isDeleteLoading}
                   className="w-full"
                   variant={"destructive"}
-                  onClick={handleCancelClick}
                 >
                   Cancelar reserva
                 </Button>
