@@ -36,3 +36,5 @@ const BarbershopsPage = async ({ searchParams }: BarbershopsPageProps) => {
     </>
   );
 };
+
+export default BarbershopsPage;
