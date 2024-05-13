@@ -216,19 +216,21 @@ const ServiceItem = ({
                     </div>
                   )}
 
-                  <BookingInfo
-                    booking={{
-                      barbershop: barbershop,
-                      date:
-                        date && hour
-                          ? setMinutes(
-                              setHours(date, Number(hour.split(":")[0])),
-                              Number(hour.split(":")[1])
-                            )
-                          : undefined,
-                      service: service,
-                    }}
-                  />
+                  <div className="px-5 py-6 border-solid border-t border-secondary">
+                    <BookingInfo
+                      booking={{
+                        barbershop: barbershop,
+                        date:
+                          date && hour
+                            ? setMinutes(
+                                setHours(date, Number(hour.split(":")[0])),
+                                Number(hour.split(":")[1])
+                              )
+                            : undefined,
+                        service: service,
+                      }}
+                    />
+                  </div>
 
                   <SheetFooter className="px-5">
                     <Button
