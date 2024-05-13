@@ -13,43 +13,41 @@ interface BookingInfoProps {
 
 const BookingInfo = ({ booking }: BookingInfoProps) => {
   return (
-    <div className="py-6 px-5 border-t border-solid border-secondary">
-      <Card>
-        <CardContent className="p-3 gap-3 flex flex-col">
-          <div className="flex justify-between">
-            <h2 className="font-bold"> {booking.service.name}</h2>
-            <h3 className="font-bold text-sm">
-              {" "}
-              {Intl.NumberFormat("pt-BR", {
-                style: "currency",
-                currency: "BRL",
-              }).format(Number(booking.service.price))}
-            </h3>
-          </div>
+    <Card>
+      <CardContent className="p-3 gap-3 flex flex-col">
+        <div className="flex justify-between">
+          <h2 className="font-bold"> {booking.service.name}</h2>
+          <h3 className="font-bold text-sm">
+            {" "}
+            {Intl.NumberFormat("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            }).format(Number(booking.service.price))}
+          </h3>
+        </div>
 
-          {booking.date && (
-            <>
-              <div className="flex justify-between">
-                <h3 className="text-gray-400 text-sm">Data</h3>
-                <h4 className="text-sm">
-                  {format(booking.date, "dd 'de' MMMM", { locale: ptBR })}
-                </h4>
-              </div>
+        {booking.date && (
+          <>
+            <div className="flex justify-between">
+              <h3 className="text-gray-400 text-sm">Data</h3>
+              <h4 className="text-sm">
+                {format(booking.date, "dd 'de' MMMM", { locale: ptBR })}
+              </h4>
+            </div>
 
-              <div className="flex justify-between">
-                <h3 className="text-gray-400 text-sm">Horário</h3>
-                <h4 className="text-sm">{format(booking.date, "hh:mm")}</h4>
-              </div>
-            </>
-          )}
+            <div className="flex justify-between">
+              <h3 className="text-gray-400 text-sm">Horário</h3>
+              <h4 className="text-sm">{format(booking.date, "hh:mm")}</h4>
+            </div>
+          </>
+        )}
 
-          <div className="flex justify-between">
-            <h3 className="text-gray-400 text-sm">Barbearia</h3>
-            <h4 className="text-sm">{booking.barbershop.name}</h4>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
+        <div className="flex justify-between">
+          <h3 className="text-gray-400 text-sm">Barbearia</h3>
+          <h4 className="text-sm">{booking.barbershop.name}</h4>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
