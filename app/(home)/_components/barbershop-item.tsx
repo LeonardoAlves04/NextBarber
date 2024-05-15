@@ -29,8 +29,8 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
                 variant="secondary"
                 className="flex gap-1 items-center top-3 left-3 oppacity-90"
               >
-                <StarIcon size={12} className="fill-primary text-primary" />
-                <span className="text-xs">5,0</span>
+                <StarIcon size={12} className="fill-primary text-primary " />
+                <span className="text-xs text-[#000000]">5,0</span>
               </Badge>
             </div>
             <Image
@@ -38,7 +38,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
               alt={barbershop.name}
               style={{ objectFit: "cover" }}
               fill
-              className="rounded-2xl"
+              className="rounded-2xl lg:w-[200px] lg:h-[200px]"
             />
           </div>
 
