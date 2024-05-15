@@ -40,13 +40,13 @@ export default async function Home() {
     <div>
       <Header />
 
-      <div className="pt-5 px-5">
-        <h2 className="text-xl font-bold">
+      <div className="pt-5 px-5 lg:flex lg:justify-center lg:flex-wrap">
+        <h2 className="text-xl font-bold lg:text-2xl">
           {session?.user
             ? `Opa, ${session.user.name?.split(" ")[0]}`
             : "Eae, vamos ficar na régua meu patrão?"}
         </h2>
-        <p className="capitalize text-sm">
+        <p className="capitalize text-sm lg:text-2xl">
           {format(new Date(), "EEEE',' dd 'de' MMMM", {
             locale: ptBR,
           })}
@@ -57,13 +57,13 @@ export default async function Home() {
         <Search />
       </div>
 
-      <div className="mt-6">
-        <h2 className="pl-5 text-xs uppercase text-gray-400 font-bold mb-3">
+      <div className="mt-6 lg:mt-10">
+        <h2 className="pl-5 text-xs uppercase text-gray-400 font-bold mb-3 lg:flex lg:justify-center lg:mb-7 lg:text-lg">
           Agendamentos
         </h2>
 
         {confirmedBookings.length > 0 && (
-          <div className="px-5 flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <div className="px-5 flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden cursor-pointer">
             {confirmedBookings.map((booking) => (
               <BookingItem key={booking.id} booking={booking} />
             ))}
@@ -71,12 +71,12 @@ export default async function Home() {
         )}
       </div>
 
-      <div className="mt-6">
-        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">
+      <div className="mt-6 lg:mt-10">
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-lg">
           Recomendações
         </h2>
 
-        <div className="flex gap-4 px-5  overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 px-5 overflow-x-auto [&::-webkit-scrollbar]:hidden lg:justify-center">
           {barbershops.map((barbershop) => (
             <div key={barbershop.id} className="min-w-[167px] max-w-[167px]">
               <BarbershopItem key={barbershop.id} barbershop={barbershop} />
@@ -85,12 +85,12 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="mt-6 mb-[4.5rem]">
-        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold">
+      <div className="mt-6 mb-[4.5rem] lg:mt-10">
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-lg">
           Populares
         </h2>
 
-        <div className="flex gap-4 px-5  overflow-x-auto [&::-webkit-scrollbar]:hidden">
+        <div className="flex gap-4 px-5  overflow-x-auto [&::-webkit-scrollbar]:hidden lg:justify-center">
           {recommendedBarbershops.map((barbershop) => (
             <div key={barbershop.id} className="min-w-[167px] max-w-[167px]">
               <BarbershopItem key={barbershop.id} barbershop={barbershop} />
