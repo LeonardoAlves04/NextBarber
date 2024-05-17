@@ -21,7 +21,7 @@ const BarberShopInfo = ({ barbershop }: BarberShopInfoProps) => {
 
   return (
     <div>
-      <div className="h-[250px] w-full relative">
+      <div className="h-[250px] w-full relative lg:h-[400px]">
         <Button
           onClick={handleBackClick}
           size="icon"
@@ -51,7 +51,7 @@ const BarberShopInfo = ({ barbershop }: BarberShopInfoProps) => {
           src={barbershop.imageUrl}
           alt="imagem da barbearia"
           fill
-          className="opacity-85 object-cover lg:w-[200] lg:h-[200px]"
+          className="opacity-85 object-cover lg:object-contain"
         />
       </div>
 

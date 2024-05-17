@@ -59,9 +59,11 @@ export default async function Home() {
       </div>
 
       <div className="mt-6 lg:mt-10">
-        <h2 className="pl-5 text-xs uppercase text-gray-400 font-bold mb-3 lg:flex lg:justify-center lg:mb-7 lg:text-lg">
-          Agendamentos
-        </h2>
+        {confirmedBookings.length > 0 && (
+          <h2 className="pl-5 text-xs uppercase text-gray-400 font-bold mb-3 lg:flex lg:justify-center lg:mb-7 lg:text-2xl">
+            Agendamentos
+          </h2>
+        )}
 
         {confirmedBookings.length > 0 && (
           <div className="px-5 flex gap-3 overflow-x-auto [&::-webkit-scrollbar]:hidden cursor-pointer">
@@ -73,7 +75,7 @@ export default async function Home() {
       </div>
 
       <div className="mt-6 lg:mt-10">
-        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-lg">
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-2xl">
           Recomendações
         </h2>
 
@@ -87,7 +89,7 @@ export default async function Home() {
       </div>
 
       <div className="mt-6 mb-[4.5rem] lg:mt-10">
-        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-lg">
+        <h2 className="px-5 text-xs mb-3 uppercase text-gray-400 font-bold lg:flex lg:justify-center lg:mb-7 lg:text-2xl">
           Populares
         </h2>
 
