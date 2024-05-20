@@ -30,7 +30,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
                 className="flex gap-1 items-center top-3 left-3 oppacity-90"
               >
                 <StarIcon size={12} className="fill-primary text-primary " />
-                <span className="text-xs text-[#000000]">5.0</span>
+                <span className="text-xs text-bold">5.0</span>
               </Badge>
             </div>
             <Image
@@ -51,7 +51,7 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             </p>
             <Button
               variant="secondary"
-              className="w-full mt-3 text-[#000000]"
+              className="w-full mt-3 text-bold"
               onClick={handleBookClick}
             >
               Reservar
