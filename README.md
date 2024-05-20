@@ -40,7 +40,7 @@ Uma plataforma de agendamento de serviços de uma barbearia, você pode procurar
 
 ## Deploy da Aplicação :dash:
 
-Deploy: 
+Deploy: dasasddasdas
 
 ## Linguagens e libs utilizadas :books:
 
