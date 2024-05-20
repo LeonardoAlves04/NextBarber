@@ -51,7 +51,7 @@ const BarberShopInfo = ({ barbershop }: BarberShopInfoProps) => {
           src={barbershop.imageUrl}
           alt="imagem da barbearia"
           fill
-          className="opacity-85 object-cover lg:object-contain"
+          className="opacity-85 object-cover lg:object-contain lg:bg-yellow-400 rounded-lg"
         />
       </div>
 
