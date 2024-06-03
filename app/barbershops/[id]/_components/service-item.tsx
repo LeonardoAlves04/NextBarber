@@ -167,11 +167,11 @@ const ServiceItem = ({
                 </SheetTrigger>
 
                 <SheetContent className="p-0">
-                  <SheetHeader className="text-left px-5 py-6 border-b border-solid border-secondary">
+                  <SheetHeader className="text-left px-5 py-6 border-b border-solid border-secondary lg:text-center">
                     <SheetTitle>Fazer reserva</SheetTitle>
                   </SheetHeader>
 
-                  <div className="py-6">
+                  <div className="py-6 lg:flex lg:justify-center">
                     <Calendar
                       mode="single"
                       selected={date}
@@ -202,7 +202,7 @@ const ServiceItem = ({
                   </div>
 
                   {date && (
-                    <div className="flex gap-3 overflow-auto py-6 px-5 border-t border-solid border-secondary [&::-webkit-scrollbar]:hidden">
+                    <div className="flex gap-3 overflow-auto py-6 px-5 border-t border-solid border-secondary [&::-webkit-scrollbar]:hidden lg:overflow-auto">
                       {timeList.map((time) => (
                         <Button
                           key={time}
@@ -236,6 +236,7 @@ const ServiceItem = ({
                     <Button
                       onClick={handleBookingSubmit}
                       disabled={!hour || !date || submitIsLoading}
+                      className="lg:m-auto lg:w-[340px]"
                     >
                       {submitIsLoading && (
                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
