@@ -40,7 +40,7 @@ Uma plataforma de agendamento de serviços de uma barbearia, você pode procurar
 
 ## Deploy da Aplicação :dash:
 
-Deploy: nextbarber-leo.vercel.app
+Deploy: https://nextbarber-leo.vercel.app
 
 ## Linguagens e libs utilizadas :books:
 
