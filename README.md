@@ -62,3 +62,11 @@ Deploy: https://nextbarber-leo.vercel.app
 
 ## Imagens do projeto (Desktop e Mobile):
 
+![Captura de Tela (43)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/60b82579-e3dc-47ee-9bc8-bce0090c0ffb)
+![Captura de Tela (50)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/a51a0dd7-9ec9-49f9-bf68-e7ef2c3bcc84)
+![Captura de Tela (49)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/efc27f2d-9eb0-4629-b030-60ca0eb8763c)
+![Captura de Tela (48)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/1458a17e-f501-4238-8f38-7b7a3d5e5e40)
+![Captura de Tela (47)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/b7f28b1f-2501-46c9-a485-ea6d7de19cc5)
+![Captura de Tela (46)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/e6f00630-baee-4e6a-9929-7bcf5e8c46d1)
+![Captura de Tela (45)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/e498fed1-915e-4616-ae4c-605d06fda8df)
+![Captura de Tela (44)](https://github.com/LeonardoAlves04/NextBarber/assets/69488943/aa037ab5-0941-4642-b144-5e6508e6c138)
