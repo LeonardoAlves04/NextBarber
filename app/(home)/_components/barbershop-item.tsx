@@ -51,10 +51,10 @@ const BarbershopItem = ({ barbershop }: BarbershopItemProps) => {
             </p>
             <Button
               variant="secondary"
-              className="w-full mt-3 text-bold"
+              className="w-full mt-3 text-bold bg-yellow-500"
               onClick={handleBookClick}
             >
-              Reservar
+              <p className="text-black">Reservar</p>
             </Button>
           </div>
         </CardContent>
