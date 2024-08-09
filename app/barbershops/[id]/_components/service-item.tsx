@@ -161,7 +161,11 @@ const ServiceItem = ({
               </p>
               <Sheet open={sheetIsOpen} onOpenChange={setSheetIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="secondary" onClick={handleBookingClick}>
+                  <Button
+                    variant="secondary"
+                    onClick={handleBookingClick}
+                    className="bg-yellow-500 text-black"
+                  >
                     Reservar
                   </Button>
                 </SheetTrigger>
