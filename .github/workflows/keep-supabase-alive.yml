@@ -1,0 +1,23 @@
+name: Keep Supabase Alive
+
+on:
+  schedule:
+    - cron: "0 12 * * 1,4"
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    name: Ping Supabase REST endpoint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call keep_alive endpoint
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          curl --silent --show-error --include \
+            --request GET \
+            --url "${SUPABASE_URL}/rest/v1/keep_alive?select=id&limit=1" \
+            --header "apikey: ${SUPABASE_ANON_KEY}" \
+            --header "Authorization: Bearer ${SUPABASE_ANON_KEY}"
